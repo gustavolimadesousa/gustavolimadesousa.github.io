@@ -1,0 +1,7 @@
+/* O @import serve para linkar outras paginas css em um so arquivo isso serve para manter o código mais organizado. */
+@import url(./global.css);
+@import url(./header.css);
+@import url(./introducao.css);
+@import url(./experiencia.css);
+@import url(./formacao.css);
+@import url(./footer.css);

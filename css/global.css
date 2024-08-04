@@ -1,0 +1,40 @@
+body {
+  margin: 0px; /* margin 0px ajusta para a definição sem estilo */
+  font-family: "Fira Sans", Arial, sans-serif; /* Quando o nome da font family é duas palavras tem que se usar "". */
+  color: #141414;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0px; 
+}
+
+ul{
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+img {
+  max-width: 100%; 
+  /* max-width: 100% faz com que a imagem não cresça infinitamente e fique no maximo de 100% do viewport. */
+  height: auto; /* Isso é preciso quando colocar o valor de width e height no HTML. Assim a imagem não fica com um valor desproporcional.  */
+  display: block;
+}
+
+.subtitulo {
+  font-size: 8rem;
+  line-height: 1; /* Isso faz com que as linhas dos paragrafos fiquem mais juntas umas das outras.  */
+  word-break: break-all; /* Isso faz com que a palavra quebre diferente do text-wrap o word-break quebra a palavra sem ter que diminuir a tela. */  text-transform: uppercase; /* Coloca tudo com letra maiuscula. */
+  max-width: 4ch; /* Tamanho do valor 0, 4 characters (mas nem sempre). */
+}
+
+@media (max-width: 800px) {
+  .subtitulo { /* Remodelando o subtitulo quando estiver em uma tela menor. */
+    font-size: 3rem;
+    text-transform: capitalize; /* Tira o uppercase. */
+    max-width: initial !important; /* Isso faz com que o título deixe de quebrar a linha como e volta a manter o maximo de caracteres da palavra. */
+  }
+}

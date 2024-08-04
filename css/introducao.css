@@ -1,0 +1,68 @@
+.introducao {
+  max-width: 1200px; /* Tamanho máximo do conteudo definido antes. */
+  padding: 40px 20px; /* Serve para desgrudar o conteúdo. */
+  margin: 0 auto; /* Aplica as margens automáticas para os lados esquerdos e direitos. necessário porque temos um max-width. */
+  display: grid;
+  grid-template-columns: 1fr 2fr ; /* Define as proporções das colunas. */
+  gap: 100px; /* Da um espaço entre os conteúdos. */
+  align-items: center; /* Aligna os itens um ao centro do outro. */
+}
+
+.introducao h1 {
+  font-size: 4.5rem; /* 4.5rem * 16 = 72px */
+  line-height: 1.125; /* 4.5rem * 16 * 1.125 = 81px */
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.introducao h1::before {
+  content: '';/* Sempre é necessario adicionar um content quando for adicionar um pseudo elemento. */
+  display: block; /* Quando adicionar um pseudo-element tem sempre que selecionar display block ou inline-block. */
+  width: 130px; /* Define a largura do pseudo-element */
+  height: 100px; /* Define a altura do pseudo-element */
+  background: url(../img/detalhe.svg) no-repeat center; /* Adiciona a imagem ao pseudo-element */
+  position: absolute; /* Tira o elemento do flow da grid. */
+  top: -15px; /* Ajusta o pseudo-elemento de acordo com o top geral do site. Para isso nao ocorrer tem que colocar o elemento pai como position: relative. Nesse caso ".introduçao h1" */
+  left: -40px; /* Ajusta o pseudo-elemento */
+  z-index: -1; /* Posiciona o pseudo-elemento atrás. */
+}
+
+.introducao p {
+font-size: 1.5rem;
+color: #525252;
+}
+
+@media (max-width: 1000px) {
+  /* Cria um ponto de quebra para o site ficar responsivo */
+.introducao h1{
+  font-size: 3rem; /* Diminue a fonte do titulo */
+}
+}
+
+@media (max-width: 800px) {
+  /* Cria um ponto de quebra para o site ficar responsivo */
+.introducao {
+  grid-template-columns: 1fr 1fr; /* Coloca as colunas nas mesmas proporções para a imagem nao diminuir mais que o texto. */
+  gap: 40px; /* Reajusta o gap. */
+}
+.introducao h1 {
+  font-size: 2rem; /* Reajusta o tamanho da fonte. */
+}
+
+.introducao h1::before {
+  width: 30px; /* Diminue a largura do container que esta segurando a imagem background. */
+  height: 10px; /* Diminue a altura do container que esta segurando a imagem background. */
+  left: 0px; /* Reajusta o posicionamento. */
+}
+}
+
+@media (max-width: 400px){
+  /* Cria um ponto de quebra para o site ficar responsivo */
+  .introducao {
+    grid-template-columns: 1fr; /* Reajusta o grid */
+  }
+
+  .introducao img {
+    display: none; /* Remove a imagem da introdução do site.  */
+  }
+}

@@ -1,0 +1,160 @@
+.formacao {
+  background-color: #141414 ; /* Muda a cor do fundo todo dessa seção. */
+  color: #fff;
+}
+
+.formacao-container {
+  max-width: 1200px; /* Tamanho máximo do conteudo definido antes. */
+  padding: 120px 20px; /* Serve para desgrudar o conteúdo. */
+  margin: 0 auto; /* Aplica as margens automáticas para os lados esquerdos e direitos. necessário porque temos um max-width. */
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 100px;
+  position: relative;
+}
+
+.formacao-container::after {
+content: "";
+display: block;
+width: 130px;
+height: 100px;
+background: url(../img/detalhe.svg) no-repeat center;
+position: absolute;
+bottom: -50px; /* Usar o bottom quando for para posicionar em baixo. */
+left: 20px;
+}
+
+.formacao .subtitulo {
+  color: #000; 
+  /* Muda a cor do subtitulo */
+  max-width: 5ch; /* Tamanho do valor 0, 5 characters (mas nem sempre). */
+}
+
+.formacao-texto {
+  font-size: 1.5rem;
+  line-height: 1.33; /* Isso faz com que as linhas dos paragrafos fiquem mais juntas umas das outras.  */
+  margin-bottom: 60px;
+  max-width: 40ch; /* Define a quantidade máxima de caracteres que eu desejo em uma linha antes que ela faça a quebra. */
+  color: #a3a3a3;
+}
+
+.formacao-texto strong {
+  color: #fff;  /* Muda a cor do strong. */
+}
+
+.faculdade-lista {
+  display: flex; /* Coloca os elementos um do lado do outro. */
+  flex-wrap: wrap; /* Faz com que haja uma quebra nos elementos quando reduzida a largura do viewport. */
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+.faculdade {
+  flex: 1; /* Ajusta os elementos para ficar todos do mesmo tamanho. "Boxes"*/
+  background-color: #000;
+  padding: 20px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column; /* Muda a direção do flex. */
+}
+
+.faculdade-tipo {
+  /* Título dentro da caixa. */
+  font-size: 0.875;
+  text-transform: uppercase;
+  color: #a3a3a3;
+  margin-bottom: 10px;
+}
+
+.faculdade-curso {
+  /* Nome do curso dentro da caixa. */
+  flex: 1; /* Faz com que o elemento cresça e ocupe todo o espaço como os outros flex itens. */
+  font-size: 1.125rem;
+  line-height: 1.4;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.faculdade-curso::before {
+  content: ''; /* Sempre é necessario adicionar um content quando for adicionar um pseudo elemento. */
+  display: block; /* Quando adicionar um pseudo-element tem sempre que selecionar display block ou inline-block. */
+  width: 4px; /* Define a largura do pseudo-element */
+  height: 20px; /* Define a altura do pseudo-element */
+  background: linear-gradient(#b6f829,#67dd0a);
+  position: absolute; /* Tira o elemento do flow da grid. */
+  left: -24px; /* Ajusta o pseudo-elemento */
+}
+
+.faculdade-instituicao {
+  font-size: 1.125rem;
+}
+
+.cursos {
+  margin-bottom: 60px;
+}
+
+.formacao-extra h3 {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: #8f8f8f;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.formacao-extra h3::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: -36px;
+  top: -4px;
+}
+
+.cursos h3::before {
+  background: url(../img/cursos.svg) no-repeat center
+}
+
+.idiomas h3::before {
+  background: url(../img/idiomas.svg) no-repeat center
+}
+
+.formacao-extra li {
+  font-size: 1.125rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.formacao-extra span{
+  color: #8f8f8f;
+}
+
+.cursos li {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 800px){
+  .formacao-container {
+    grid-template-columns: 1fr; /* Estrutura o conteúdo em apenas uma coluna.  */
+    padding: 60px 20px; /* Diminue os espaços do conteúdo. */
+    gap: 40px;
+  }
+
+  .formacao .subtitulo{
+    color: #ffffff /* Muda a cor do subtitulo já que em modo mobile não faz mas sentido ser preto. */
+  }
+
+  .formacao-texto {
+    font-size: 1.25rem; /* Diminue o texto abaixo do subtitulo. */
+  }
+
+  .formacao-extra h3::before {
+  position: initial;
+  margin-bottom: 10px;
+  }
+}
+
+
+
